@@ -24,6 +24,7 @@ import LinkedinLogo from "../assets/linkedin.svg";
 
 import Kanban from "../images/kanban.png";
 import Feedback from "../images/feedback.png";
+
 import Tabs from "@/components/Tabs";
 
 import ArrowDownTrayIcon from "@heroicons/react/20/solid";
@@ -96,7 +97,7 @@ export default function Home() {
             connect and bring your web vision to life!
           </p>
           <a
-            download
+            download="cv"
             href="/cv.pdf"
             className="border border-[#FFC727] text-[#FFC727] px-4 py-2 rounded-full hover:bg-[#FFC727] hover:text-[#151515] transition-all"
             // download={"cv.pdf"}
@@ -239,11 +240,7 @@ export default function Home() {
 
         {/* FEEDBACK APP */}
         <div className="flex flex-col items-center lg:grid lg:grid-cols-[1fr,1fr] w-full">
-          <Image
-            className="hover:scale-105 transition-all duration-300"
-            src={Feedback}
-            alt=""
-          />
+          <Image src={Feedback} alt="" />
           <div className="flex flex-col items-center lg:items-start justify-center gap-8">
             <span className="text-[#C7C7C7] -mb-6">INDIVIDUAL PROJECT</span>
             <h3 className="text-[30px] font-bold">Product Review App</h3>
