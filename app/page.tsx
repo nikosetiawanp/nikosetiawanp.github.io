@@ -21,6 +21,7 @@ import Signature from "../assets/signature.svg";
 
 import GithubLogo from "../assets/github.svg";
 import LinkedinLogo from "../assets/linkedin.svg";
+import WhatsappLogo from "../assets/whatsapp.svg";
 
 import Kanban from "../images/kanban.png";
 import Feedback from "../images/feedback.png";
@@ -28,6 +29,7 @@ import Feedback from "../images/feedback.png";
 import Tabs from "@/components/Tabs";
 
 import ArrowDownTrayIcon from "@heroicons/react/20/solid";
+import Sidebar from "@/components/Sidebar";
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -38,14 +40,14 @@ export default function Home() {
     <main className="flex h-scroll w-screen flex-col items-center justify-between px-8 gap-24 bg-[#151515]">
       {/* <div className="w-screen h-[80px]"> */}
       <nav
-        className={`w-screen fixed top-0 bg-[#151515] flex justify-center lg:justify-between items-center gap-4 h-[80px] z-50 transition-opacity duration-1000 ease-linear lg:px-8`}
+        className={`w-screen fixed top-0 bg-[#151515] flex justify-between items-center gap-4 h-[80px] z-50 transition-opacity duration-1000 ease-linear lg:px-8`}
       >
         <div
-          className={`flex justify-center lg:justify-between items-center gap-4 w-full ${
+          className={`flex justify-between items-center gap-4 w-full px-8 ${
             loaded ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Image src={Signature} alt="" className="h-[50px]" />
+          <Image src={Signature} alt="" className="h-[50px] hidden lg:block" />
           <div className="gap-6 hidden lg:flex">
             <a href="#about" className="hover:text-[#FFC727]">
               About
@@ -59,13 +61,49 @@ export default function Home() {
             <a href="#education" className="hover:text-[#FFC727]">
               Education & Experiences
             </a>
+            {/* <a href="#contact" className="hover:text-[#FFC727]">
+              Contact
+            </a> */}
           </div>
-          <div className="hidden lg:flex gap-8">
+          {/* HAMBURGER */}
+          <Sidebar />
+          {/* <button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button> */}
+          <div className="flex gap-8">
             <a href="https://github.com/nikosetiawanp">
-              <Image className="w-[40px] h-[40px]" src={GithubLogo} alt="" />
+              <Image
+                className="lg:w-[40px] lg:h-[40px] w-[20px] h-[20px]"
+                src={GithubLogo}
+                alt=""
+              />
             </a>
             <a href="https://www.linkedin.com/in/nikosetiawanp/">
-              <Image className="w-[40px] h-[40px]" src={LinkedinLogo} alt="" />
+              <Image
+                className="lg:w-[40px] lg:h-[40px] w-[20px] h-[20px]"
+                src={LinkedinLogo}
+                alt=""
+              />
+            </a>
+            <a href="https://wa.me/081383870011" className="">
+              <Image
+                className="lg:w-[40px] lg:h-[40px] w-[20px] h-[20px]"
+                src={WhatsappLogo}
+                alt=""
+              />
             </a>
           </div>
         </div>
@@ -75,7 +113,7 @@ export default function Home() {
       {/* HERO SECTION */}
       <section
         id="about"
-        className="flex flex-col lg:flex-row-reverse items-center w-full max-w-[1440px] mt-[100px] lg:px-12"
+        className="pt-[150px] flex flex-col lg:flex-row-reverse items-center w-full max-w-[1440px] mt-[100px] lg:px-12"
       >
         {/* IMAGE */}
         <div className="col-span-1 flex justify-center items-center w-full">
@@ -110,7 +148,7 @@ export default function Home() {
       {/* SKILLS */}
       <section
         id="skills"
-        className={`flex flex-col justify-center items-center w-full max-w-[1440px] transition-opacity duration-1000 ease-linear ${
+        className={`pt-[150px] flex flex-col justify-center items-center w-full max-w-[1440px] transition-opacity duration-1000 ease-linear ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -198,10 +236,13 @@ export default function Home() {
           loaded ? "opacity-100" : "opacity-0"
         }`}
       >
-        <h1 id="projects" className="text-[48px] text-[#FFC727] font-bold">
+        <h1
+          id="projects"
+          className="pt-[150px]  text-[48px] text-[#FFC727] font-bold"
+        >
           Projects
         </h1>
-        <span className="max-w-[768px] text-center mb-16">
+        <span className="max-w-[768px] text-center mb-8">
           To view more of my projects, please visit my{" "}
           <a href="https://github.com/nikosetiawanp" className="text-[#FFC727]">
             Github
@@ -265,7 +306,7 @@ export default function Home() {
         {/* <h1>Edu</h1> */}
       </section>
       {/* EDUCATION */}
-      <section className="min-h-screen flex flex-col justify-center items-center mb-16 lg:px-8">
+      <section className="pt-[150px] min-h-screen flex flex-col justify-center items-center mb-16 lg:px-8">
         <h1
           id="education"
           className="text-[48px] text-[#FFC727] font-bold leading-tight mb-16 text-center"
@@ -389,6 +430,23 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* CONTACT */}
+      {/* <section id="contact" className="flex flex-col items-center mb-16">
+        <h1 className="text-[48px] text-[#FFC727] font-bold leading-tight mb-8">
+          Contact Me
+        </h1>
+        <div className="flex gap-8">
+          <a href="https://github.com/nikosetiawanp">
+            <Image className="w-[40px] h-[40px]" src={GithubLogo} alt="" />
+          </a>
+          <a href="https://www.linkedin.com/in/nikosetiawanp/">
+            <Image className="w-[40px] h-[40px]" src={LinkedinLogo} alt="" />
+          </a>
+          <a href="https://wa.me/081383870011" className="">
+            <Image className="w-[40px] h-[40px]" src={WhatsappLogo} alt="" />
+          </a>
+        </div>
+      </section> */}
     </main>
   );
 }
