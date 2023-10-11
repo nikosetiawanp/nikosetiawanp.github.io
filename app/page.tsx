@@ -265,7 +265,7 @@ export default function Home() {
         {/* <h1>Edu</h1> */}
       </section>
       {/* EDUCATION */}
-      <section className="min-h-screen flex flex-col justify-center items-center mb-16">
+      <section className="min-h-screen flex flex-col justify-center items-center mb-16 lg:px-8">
         <h1
           id="education"
           className="text-[48px] text-[#FFC727] font-bold leading-tight mb-16 text-center"
